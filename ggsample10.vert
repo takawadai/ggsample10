@@ -36,7 +36,7 @@ void main(void)
             k3 * sh[6] * (n.z * n.z) +
             k4 * sh[0] - k5 * sh[6] +
             2 * k1 * (sh[4] * n.x * n.y + sh[7] * n.x * n.z + sh[5] * n.y * n.z) +
-            2 * k2 * (;
+            2 * k2 * (sh[;
   idiff = max(dot(n, l), 0.0) * kdiff * ldiff;
 
   gl_Position = mc * pv;
