@@ -32,7 +32,11 @@ void main(void)
   vec4 p = mw * pv;                                 // 視点座標系の頂点の位置
   vec3 l = normalize((pl * p.w - p * pl.w).xyz);    // 光線ベクトル
   vec3 n = normalize((mg * nv).xyz);                // 法線ベクトル
-
+  float E = k1 * sh[8] * (n.x * n.x - n.y * n.y) + 
+            k3 * sh[6] * (n.z * n.z) +
+            k4 * sh[0] - k5 * sh[6] +
+            2 * k1 * (sh[4] * n.x * n.y + sh[7] * n.x * n.z + sh[5] * n.y * n.z) +
+            2 * k2 * (;
   idiff = max(dot(n, l), 0.0) * kdiff * ldiff;
 
   gl_Position = mc * pv;
